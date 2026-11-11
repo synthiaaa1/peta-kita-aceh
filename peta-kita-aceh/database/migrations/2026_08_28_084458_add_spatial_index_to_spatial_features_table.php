@@ -11,6 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (DB::connection()->getDriverName() !== 'pgsql') {
+            return;
+        }
+
         // For testing environments where the column might still be 'text', cast it to geometry.
         // In production, it's already 'geometry' so this is safe.
         $hasGeometry = collect(DB::select("SELECT 1 FROM pg_type WHERE typname = 'geometry'"))->isNotEmpty();

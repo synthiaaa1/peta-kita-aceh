@@ -96,6 +96,8 @@ Proyek ini telah dilengkapi dengan suite pengujian otomatis berbasis PHPUnit/Pes
 php artisan test
 ```
 
+Test suite menggunakan database PostgreSQL terpisah `satu_peta_aceh_test` dari `phpunit.xml`, bukan database aplikasi. Buat database tersebut dan aktifkan PostGIS sebelum menjalankan suite.
+
 Uji otomatis mencakup:
 - Keberhasilan pemuatan Halaman Utama, WebGIS Viewer, dan Katalog.
 - Validasi struktur GeoJSON pada endpoint API `/api/layers/{id}/geojson`.
@@ -107,3 +109,5 @@ Uji otomatis mencakup:
 ## 📄 Lisensi
 
 Platform ini dikembangkan di bawah lisensi [MIT License](LICENSE).
+
+fisya cuantek
